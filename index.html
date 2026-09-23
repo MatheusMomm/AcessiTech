@@ -72,7 +72,7 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DO CARROSSEL (FOTO E TEXTO ILUSTRATIVO SEM BOTÕES EXTRAS) -->
+        <!-- SEÇÃO DO CARROSSEL (FOTO E TEXTO ILUSTRATIVO) -->
         <section id="conteudo" class="main-content-section">
             <div class="container">
                 
@@ -144,7 +144,24 @@
             </div>
         </section>
 
-        <!-- SEÇÃO DE MÍDIAS (PLAYER DE VÍDEO E PODCAST COM TRANSCRIÇÃO REAL) -->
+        <!-- NOVA SEÇÃO: IMAGEM NA ESQUERDA E TEXTO NA DIREITA (SEM CARD) -->
+        <section class="side-content-section">
+            <div class="container">
+                <div class="side-content-wrapper">
+                    <div class="side-image-box">
+                        <img src="assets/image_228d5a.jpg" alt="Ilustração de inclusão e diversidade">
+                    </div>
+                    <div class="side-text-box">
+                        <span class="section-tag">COMPROMISSO SOCIAL</span>
+                        <h2 class="column-title">Construindo Comunidades Acolhedoras e Acessíveis</h2>
+                        <p>A verdadeira acessibilidade digital é aquela que integra design universal, empatia e conformidade técnica rigorosa. Cada linha de código e cada elemento visual devem ser pensados para acolher a diversidade humana em todas as suas formas.</p>
+                        <p>Promover a inclusão é um esforço contínuo que transforma a tecnologia em uma ponte universal para o conhecimento, a educação e a cidadania plena.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE MÍDIAS (VÍDEO E PODCAST COM TRANSCRIÇÃO COMPLETA) -->
         <section id="midias" class="media-section">
             <div class="container">
                 
@@ -186,13 +203,31 @@
 
                     <p class="media-note">*Vídeo demonstrativo com suporte a navegação por teclado e síntese inclusiva.</p>
 
-                    <details class="transcript-box">
+                    <!-- CAIXA DE TRANSCRIÇÃO COMPLETA DO VÍDEO -->
+                    <details class="transcript-box" open>
                         <summary>
-                            <span>📄 Transcrição e Nota de Acessibilidade do Vídeo</span>
-                            <span class="expand-label">▼ Expandir</span>
+                            <span>📄 Transcrição Completa do Vídeo (Texto na Íntegra)</span>
+                            <span class="expand-label">▼ Recolher/Expandir</span>
                         </summary>
                         <div class="transcript-content">
-                            <p><strong>Nota de Acessibilidade:</strong> Este vídeo acompanha o conteúdo oficial da transcrição do episódio de podcast do portal.</p>
+                            <p><strong>[00:00]</strong> Transcrição acessível ao vídeo: IA como ferramenta de apoio na acessibilidade web[cite: 12].</p>
+                            <p><strong>[00:06]</strong> Nota de acessibilidade. Este texto representa a transcrição integral do episódio[cite: 12]. Ele foi estruturado para corresponder exatamente ao conteúdo falado[cite: 12].</p>
+                            <p><strong>[00:22]</strong> Olá a todas e todos! Sejam muito bem-vindos a mais um episódio do nosso portal sobre acessibilidade e inclusão digital[cite: 12].</p>
+                            <p><strong>[00:30]</strong> Hoje, vamos conversar sobre como a inteligência artificial pode atuar como uma verdadeira ferramenta de apoio no processo de criação e revisão de conteúdos[cite: 12].</p>
+                            <p><strong>[00:42]</strong> Olá! É um prazer estar aqui[cite: 12]. A IA apoia a pesquisa inicial, estruturação de roteiros, textos, imagens, narração e vídeo[cite: 12].</p>
+                            <p><strong>[00:58]</strong> Mas vale lembrar: a IA é uma assistente[cite: 12]. A equipe humana deve sempre conferir o resultado e corrigir falhas[cite: 12].</p>
+                            <p><strong>[01:08]</strong> Exatamente[cite: 12]. E para quem está criando um projeto digital, surge sempre a dúvida: qual IA devemos utilizar em cada etapa[cite: 12]?</p>
+                            <p><strong>[01:17]</strong> Tudo depende do objetivo[cite: 12]. Vamos repassar algumas etapas fundamentais[cite: 12].</p>
+                            <p><strong>[01:22]</strong> Em primeiro lugar, para código e acessibilidade, a IA ajuda a estruturar HTML e CSS, explicar códigos e sugerir testes práticos[cite: 12].</p>
+                            <p><strong>[01:37]</strong> Perfeito[cite: 12]. Para os textos da página, a IA ajuda a organizar ideias, criar títulos e simplificar a linguagem[cite: 12].</p>
+                            <p><strong>[01:51]</strong> Opções comuns são ChatGPT, Gemini, Claude ou Microsoft Copilot[cite: 12].</p>
+                            <p><strong>[01:59]</strong> Para apoio visual e imagens, podemos gerar ilustrações originais alinhadas ao tema[cite: 12].</p>
+                            <p><strong>[02:10]</strong> Ferramentas como ChatGPT Images, Adobe Firefly, Canva Magic Studio ou Gemini[cite: 12].</p>
+                            <p><strong>[02:19]</strong> Na produção de vídeo, a IA auxilia em roteiros, storyboards, animações e edição[cite: 12].</p>
+                            <p><strong>[02:41]</strong> E no formato de podcast e narração, a IA transforma pesquisas em conversas fluidas[cite: 12].</p>
+                            <p><strong>[03:06]</strong> É fundamental reforçar que não é necessário usar todas essas ferramentas de uma vez[cite: 12]. Escolha as soluções autorizadas pela sua instituição[cite: 12].</p>
+                            <p><strong>[03:24]</strong> E a regra de ouro: nunca envie dados pessoais ou vozes de terceiros sem autorização prévia[cite: 12].</p>
+                            <p><strong>[03:40]</strong> Começar pela estrutura semântica torna a página compreensível para leitores de tela[cite: 12]. A acessibilidade se constrói nos detalhes[cite: 12].</p>
                         </div>
                     </details>
                 </div>
@@ -207,7 +242,7 @@
                         <span class="episode-tag">Episódio #01 · 03:56 min</span>
                     </div>
 
-                    <audio id="podcast-audio" src="assets/video.mp4" preload="auto"></audio>
+                    <audio id="podcast-audio" src="assets/ElevenLabs_2026-09-22T18_32_22__s50_v3.mp3" preload="auto"></audio>
 
                     <div class="podcast-player-box">
                         <button id="btn-play-podcast" class="play-btn-circle" aria-label="Tocar podcast">
@@ -235,31 +270,31 @@
                             <span class="expand-label">▼ Recolher/Expandir</span>
                         </summary>
                         <div class="transcript-content">
-                            <p><strong>[00:00]</strong> Transcrição acessível ao podcast: IA como ferramenta de apoio na acessibilidade web[cite: 12].</p>
-                            <p><strong>[00:06]</strong> Nota de acessibilidade. Este texto representa a transcrição integral do episódio do podcast[cite: 12]. Ele foi estruturado para corresponder exatamente ao conteúdo áudio, incluindo a identificação dos participantes e efeitos sonoros relevantes[cite: 12].</p>
-                            <p><strong>[00:22]</strong> Olá a todas e todos! Sejam muito bem-vindos a mais um episódio do nosso podcast sobre acessibilidade e inclusão digital[cite: 12].</p>
-                            <p><strong>[00:30]</strong> Hoje, vamos conversar sobre como a inteligência artificial pode atuar como uma verdadeira ferramenta de apoio no processo de criação, registro e revisão de conteúdos acessíveis[cite: 12].</p>
-                            <p><strong>[00:42]</strong> Olá! É um prazer estar aqui[cite: 12]. Esse é um tema essencial, pois a inteligência artificial pode apoiar a pesquisa inicial, a estruturação de roteiros, a produção de textos, a geração de imagens, a narração, o vídeo e até o próprio podcast[cite: 12].</p>
-                            <p><strong>[00:58]</strong> Mas vale lembrar: a IA é uma assistente[cite: 12]. A equipe humana deve sempre conferir o resultado, corrigir falhas e garantir a eliminação de estereótipos[cite: 12].</p>
-                            <p><strong>[01:08]</strong> Exatamente[cite: 12]. E para quem está criando um projeto digital, surge sempre a dúvida: qual IA devemos utilizar em cada etapa do trabalho[cite: 12]?</p>
-                            <p><strong>[01:17]</strong> Tudo depende do objetivo[cite: 12]. Vamos repassar algumas etapas fundamentais[cite: 12].</p>
-                            <p><strong>[01:22]</strong> Em primeiro lugar, para código e acessibilidade, a IA pode ajudar a estruturar HTML e CSS, explicar trechos de código complexos, revisar a responsividade e sugerir testes práticos de acessibilidade[cite: 12].</p>
-                            <p><strong>[01:37]</strong> Perfeito[cite: 12]. E no caso dos textos da página? Para os textos, a IA ajuda a organizar ideias, criar títulos atraentes, simplificar a linguagem e revisar a clareza, sempre garantindo o respeito ao leitor[cite: 12].</p>
-                            <p><strong>[01:51]</strong> Algumas opções bastante utilizadas para essa finalidade são o ChatGPT, o Gemini, o Claude ou o Microsoft Copilot[cite: 12].</p>
-                            <p><strong>[01:59]</strong> E quando o assunto é apoio visual, como a geração de imagens? Nesse caso, podemos gerar ilustrações originais e testar composições visuais alinhadas ao tema escolhido[cite: 12].</p>
-                            <p><strong>[02:10]</strong> Para isso, temos opções como o ChatGPT Images, Adobe Firefly, Canva Magic Studio ou o próprio Gemini[cite: 12].</p>
-                            <p><strong>[02:19]</strong> Excelente[cite: 12]. E para quem está produzindo conteúdo em vídeo? Na produção audiovisual, a IA auxilia na criação de roteiros, na elaboração de storyboards, encenas curtas, animações e no suporte à edição final[cite: 12].</p>
-                            <p><strong>[02:33]</strong> Ferramentas como Adobe Firefly, Canva Magic Media ou os recursos de vídeo do Gemini são ótimas aliadas[cite: 12].</p>
-                            <p><strong>[02:41]</strong> E para finalizar a lista de recursos, temos o nosso formato de hoje: podcast e narração[cite: 12].</p>
-                            <p><strong>[02:47]</strong> Sim! A IA é incrível para transformar fontes de pesquisa em formato de conversa, preparar roteiros dinâmicos e até gerar uma narração em áudio fluida a partir de um texto revisado[cite: 12].</p>
-                            <p><strong>[02:59]</strong> Opções como o NotebookLM, o ElevenLabs ou o Canva cumprem muito bem esse papel[cite: 12].</p>
-                            <p><strong>[03:06]</strong> É fundamental reforçar que não é necessário usar todas essas ferramentas de uma vez[cite: 12]. A equipe deve escolher as soluções disponíveis e devidamente autorizadas pela sua instituição[cite: 12].</p>
-                            <p><strong>[03:17]</strong> Lembrem-se de que os planos, limites de uso, idade mínima e recursos disponíveis podem variar[cite: 12].</p>
-                            <p><strong>[03:24]</strong> E a regra de ouro: nunca envie dados pessoais, fotos ou vozes de terceiros sem a devida autorização prévia[cite: 12].</p>
-                            <p><strong>[03:32]</strong> Para encerrarmos a nossa reflexão de hoje, como pequenas decisões de desenvolvimento removem barreiras na prática[cite: 12].</p>
-                            <p><strong>[03:40]</strong> Começar pela estrutura semântica torna a página muito mais compreensível para várias tecnologias assistivas, como os leitores de tela[cite: 12]. A acessibilidade se constrói nos detalhes[cite: 12].</p>
-                            <p><strong>[03:51]</strong> Com certeza[cite: 12]. Muito obrigada pela conversa e até o nosso próximo episódio[cite: 12]!</p>
-                        </div>
+    <p><strong>[00:00]</strong> Transcrição acessível ao podcast: IA como ferramenta de apoio na acessibilidade web.</p>
+    <p><strong>[00:06]</strong> Nota de acessibilidade. Este texto representa a transcrição integral do episódio do podcast. Ele foi estruturado para corresponder exatamente ao conteúdo áudio.</p>
+    <p><strong>[00:22]</strong> Olá a todas e todos! Sejam muito bem-vindos a mais um episódio do nosso podcast sobre acessibilidade e inclusão digital.</p>
+    <p><strong>[00:30]</strong> Hoje, vamos conversar sobre como a inteligência artificial pode atuar como uma verdadeira ferramenta de apoio no processo de criação, registro e revisão de conteúdos acessíveis.</p>
+    <p><strong>[00:42]</strong> Olá! É um prazer estar aqui. Esse é um tema essencial, pois a inteligência artificial pode apoiar a pesquisa inicial, a estruturação de roteiros, a produção de textos, a geração de imagens, a narração, o vídeo e até o próprio podcast.</p>
+    <p><strong>[00:58]</strong> Mas vale lembrar: a IA é uma assistente. A equipe humana deve sempre conferir o resultado, corrigir falhas e garantir a eliminação de estereótipos.</p>
+    <p><strong>[01:08]</strong> Exatamente. E para quem está criando um projeto digital, surge sempre a dúvida: qual IA devemos utilizar em cada etapa do trabalho?</p>
+    <p><strong>[01:17]</strong> Tudo depende do objetivo. Vamos repassar algumas etapas fundamentais.</p>
+    <p><strong>[01:22]</strong> Em primeiro lugar, para código e acessibilidade, a IA pode ajudar a estruturar HTML e CSS, explicar trechos de código complexos, revisar a responsividade e sugerir testes práticos de acessibilidade.</p>
+    <p><strong>[01:37]</strong> Perfeito. E no caso dos textos da página? Para os textos, a IA ajuda a organizar ideias, criar títulos atraentes, simplificar a linguagem e revisar a clareza, sempre garantindo o respeito ao leitor.</p>
+    <p><strong>[01:51]</strong> Algumas opções bastante utilizadas para essa finalidade são o ChatGPT, o Gemini, o Claude ou o Microsoft Copilot.</p>
+    <p><strong>[01:59]</strong> E quando o assunto é apoio visual, como a geração de imagens? Nesse caso, podemos gerar ilustrações originais e testar composições visuais alinhadas ao tema escolhido.</p>
+    <p><strong>[02:10]</strong> Para isso, temos opções como o ChatGPT Images, Adobe Firefly, Canva Magic Studio ou o próprio Gemini.</p>
+    <p><strong>[02:19]</strong> Excelente. E para quem está produzindo conteúdo em vídeo? Na produção audiovisual, a IA auxilia na criação de roteiros, na elaboração de storyboards, encenas curtas, animações e no suporte à edição final.</p>
+    <p><strong>[02:33]</strong> Ferramentas como Adobe Firefly, Canva Magic Media ou os recursos de vídeo do Gemini são ótimas aliadas.</p>
+    <p><strong>[02:41]</strong> E para finalizar a lista de recursos, temos o nosso formato de hoje: podcast e narração.</p>
+    <p><strong>[02:47]</strong> Sim! A IA é incrível para transformar fontes de pesquisa em formato de conversa, preparar roteiros dinâmicos e até gerar uma narração em áudio fluida a partir de um texto revisado.</p>
+    <p><strong>[02:59]</strong> Opções como o NotebookLM, o ElevenLabs ou o Canva cumprem muito bem esse papel.</p>
+    <p><strong>[03:06]</strong> É fundamental reforçar que não é necessário usar todas essas ferramentas de uma vez. A equipe deve escolher as soluções disponíveis e devidamente autorizadas pela sua instituição.</p>
+    <p><strong>[03:17]</strong> Lembrem-se de que os planos, limites de uso, idade mínima e recursos disponíveis podem variar.</p>
+    <p><strong>[03:24]</strong> E a regra de ouro: nunca envie dados pessoais, fotos ou vozes de terceiros sem a devida autorização prévia.</p>
+    <p><strong>[03:32]</strong> Para encerrar, como pequenas decisões de desenvolvimento removem barreiras na prática.</p>
+    <p><strong>[03:40]</strong> Começar pela estrutura semântica torna a página muito mais compreensível para várias tecnologias assistivas, como os leitores de tela. A acessibilidade se constrói nos detalhes.</p>
+    <p><strong>[03:51]</strong> Com certeza. Muito obrigada pela conversa e até o nosso próximo episódio!</p>
+</div>
                     </details>
                 </div>
 
@@ -267,7 +302,7 @@
         </section>
     </main>
 
-    <!-- RODAPÉ -->
+    <!-- RODAPÉ ATUALIZADO (SEM FUNDO NO DESENVOLVIDO POR, LINKS PARA GITHUB E SEM LOGOS DE REDES SOCIAIS) -->
     <footer id="sobre" class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col brand-col">
@@ -277,10 +312,12 @@
                 </div>
                 <p>Plataforma aberta dedicada a disseminar diretrizes de inclusão, acessibilidade web (WCAG) e tecnologias assistivas.</p>
                 
-                <div class="authors-badge-box">
+                <!-- SEÇÃO "DESENVOLVIDO POR" SEM CAIXA/FUNDO E COM LINKS PARA GITHUB -->
+                <div class="authors-plain-box">
                     <span class="authors-title-small">Desenvolvido por:</span>
                     <div class="authors-names">
-                        <strong>Matheus Momm de Souza</strong> & <strong>Lucas Antonio Linhar</strong>
+                        <a href="https://github.com/MatheusMomm" target="_blank" rel="noopener noreferrer">Matheus Momm de Souza</a> & 
+                        <a href="https://github.com/lucaslinhar-afk" target="_blank" rel="noopener noreferrer">Lucas Antonio Linhar</a>
                     </div>
                 </div>
             </div>
@@ -302,20 +339,9 @@
                 </ul>
             </div>
 
-            <div class="footer-col social-col">
-                <h4>Redes Sociais</h4>
-                <div class="footer-social-icons">
-                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="nike-social-icon" aria-label="Instagram">
-                        <img src="assets/instagram.pnj.webp" alt="Instagram">
-                    </a>
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="nike-social-icon" aria-label="GitHub">
-                        <img src="assets/git.png" alt="GitHub">
-                    </a>
-                    <a href="https://wa.me/5548999999999" target="_blank" rel="noopener noreferrer" class="nike-social-icon" aria-label="WhatsApp">
-                        <img src="assets/whats.png" alt="WhatsApp">
-                    </a>
-                </div>
-                <p class="support-text">Acesse nossos canais oficiais diretamente.</p>
+            <div class="footer-col">
+                <h4>Sobre o Portal</h4>
+                <p class="support-text">Desenvolvido com foco total em acessibilidade web, navegação por teclado e compatibilidade com leitores de tela.</p>
             </div>
         </div>
 

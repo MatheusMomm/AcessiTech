@@ -250,7 +250,7 @@ body {
    CARROSSEL LARGO (SEÇÃO INTEIRA)
    ========================================== */
 .main-content-section {
-    padding: 70px 0;
+    padding: 70px 0 30px;
 }
 
 .carousel-section-header {
@@ -401,6 +401,48 @@ body {
     background: var(--purple-light);
     width: 28px;
     border-radius: 6px;
+}
+
+/* ==========================================
+   NOVA SEÇÃO LADO A LADO (SEM CARD)
+   ========================================== */
+.side-content-section {
+    padding: 60px 0;
+}
+
+.side-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.side-image-box {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-subtle);
+    max-height: 420px;
+}
+
+.side-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.side-text-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.side-text-box p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /* ==========================================
@@ -704,7 +746,7 @@ body {
 }
 
 /* ==========================================
-   RODAPÉ
+   RODAPÉ (COM AUTORES PLAIN E LINKS GITHUB)
    ========================================== */
 .main-footer {
     background: linear-gradient(180deg, var(--bg-dark) 0%, #050308 100%);
@@ -715,7 +757,7 @@ body {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
     gap: 36px;
     padding-bottom: 50px;
 }
@@ -753,16 +795,13 @@ body {
     font-size: 0.85rem;
 }
 
-.authors-badge-box {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    padding: 12px 16px;
-    border-radius: 10px;
+.authors-plain-box {
+    margin-top: 10px;
 }
 
 .authors-title-small {
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     color: var(--purple-light);
     font-weight: 700;
     text-transform: uppercase;
@@ -771,7 +810,19 @@ body {
 
 .authors-names {
     color: var(--text-primary);
-    font-size: 0.88rem;
+    font-size: 0.92rem;
+}
+
+.authors-names a {
+    color: var(--purple-light);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.authors-names a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .footer-col h4 {
@@ -801,38 +852,10 @@ body {
     text-decoration: underline;
 }
 
-.footer-social-icons {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 14px;
-}
-
-.nike-social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-}
-
-.nike-social-icon img {
-    width: 24px !important;
-    height: 24px !important;
-    object-fit: contain;
-    filter: invert(100%) brightness(85%);
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.nike-social-icon:hover img {
-    filter: invert(80%) sepia(50%) saturate(1000%) hue-rotate(240deg);
-    transform: scale(1.1);
-}
-
 .support-text {
-    font-size: 0.78rem;
-    color: #6b7280;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.6;
 }
 
 .footer-bottom {
@@ -913,5 +936,8 @@ body.high-contrast .play-icon-small {
     }
     .carousel-img-wrapper {
         height: 240px;
+    }
+    .side-content-wrapper {
+        flex-direction: column;
     }
 }
