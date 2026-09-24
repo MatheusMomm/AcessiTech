@@ -1,358 +1,1297 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcessiTech - Portal Aberto de Acessibilidade</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="AcessiTech - Portal aberto sobre inclusão, acessibilidade digital e tecnologias assistivas.">
+
+    <title>AcessiTech | Inclusão e Acessibilidade Digital</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="style.css">
 </head>
+
 <body>
 
-    <!-- BARRA COMPACTA COM TRANSPARÊNCIA E DESFOQUE GLASSMORPHISM -->
+    <!-- =====================================================
+         DEFINIÇÕES DOS FILTROS DE DALTONISMO
+         ===================================================== -->
+
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        style="position:absolute;width:0;height:0;overflow:hidden"
+        aria-hidden="true">
+
+        <filter id="protanopia-filter">
+
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.567 0.433 0 0 0
+                0.558 0.442 0 0 0
+                0 0.242 0.758 0 0
+                0 0 0 1 0">
+            </feColorMatrix>
+
+        </filter>
+
+        <filter id="deuteranopia-filter">
+
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.625 0.375 0 0 0
+                0.700 0.300 0 0 0
+                0 0.300 0.700 0 0
+                0 0 0 1 0">
+            </feColorMatrix>
+
+        </filter>
+
+        <filter id="tritanopia-filter">
+
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.950 0.050 0 0 0
+                0 0.433 0.567 0 0
+                0 0.475 0.525 0 0
+                0 0 0 1 0">
+            </feColorMatrix>
+
+        </filter>
+
+    </svg>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
     <header class="main-header">
+
         <div class="container header-container">
-            <!-- LOGO E IDENTIDADE -->
+
             <div class="brand">
-                <div class="logo-icon">A+</div>
-                <div class="brand-text">
-                    <span class="brand-title">AcessiTech <span class="badge-portal">PORTAL ABERTO</span></span>
+
+                <div class="logo-icon">
+                    A+
                 </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-title">
+
+                        AcessiTech
+
+                        <span class="badge-portal">
+                            PORTAL ABERTO
+                        </span>
+
+                    </span>
+
+                </div>
+
             </div>
 
-            <!-- MENU DE NAVEGAÇÃO -->
-            <nav class="main-nav" aria-label="Navegação Principal">
+
+            <!-- MENU -->
+
+            <nav class="main-nav"
+                aria-label="Navegação Principal">
+
                 <ul>
-                    <li><a href="#inicio" class="active">Início</a></li>
-                    <li><a href="#conteudo">Conteúdo</a></li>
-                    <li><a href="#galeria">Destaques</a></li>
-                    <li><a href="#midias">Mídias</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+
+                    <li>
+                        <a href="#inicio"
+                            class="active">
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#conteudo">
+                            Conteúdo
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#galeria">
+                            Destaques
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#midias">
+                            Mídias
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">
+                            Sobre
+                        </a>
+                    </li>
+
                 </ul>
+
             </nav>
 
-            <!-- CONTROLES DE ACESSIBILIDADE FUNCIONAIS -->
+
+            <!-- =================================================
+                 CONTROLES DE ACESSIBILIDADE
+                 ================================================= -->
+
             <div class="accessibility-controls">
-                <button id="btn-decrease-text" aria-label="Diminuir texto">A-</button>
-                <button id="btn-reset-text" aria-label="Texto padrão">A</button>
-                <button id="btn-increase-text" aria-label="Aumentar texto">A+</button>
-                <button id="btn-high-contrast" class="btn-contrast" aria-label="Alto contraste">◐ Contraste</button>
+
+                <button
+                    id="btn-decrease-text"
+                    aria-label="Diminuir tamanho do texto">
+
+                    A-
+
+                </button>
+
+
+                <button
+                    id="btn-reset-text"
+                    aria-label="Restaurar tamanho padrão do texto">
+
+                    A
+
+                </button>
+
+
+                <button
+                    id="btn-increase-text"
+                    aria-label="Aumentar tamanho do texto">
+
+                    A+
+
+                </button>
+
+
+                <div class="contrast-wrapper">
+
+                    <button
+                        id="btn-contrast-menu"
+                        class="btn-contrast"
+                        aria-expanded="false"
+                        aria-controls="contrast-menu">
+
+                        ◐ Contraste
+
+                    </button>
+
+
+                    <div
+                        id="contrast-menu"
+                        class="contrast-menu"
+                        aria-label="Opções de acessibilidade">
+
+                        <button
+                            type="button"
+                            data-contrast="normal">
+
+                            Normal
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-contrast="high">
+
+                            Alto contraste
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-contrast="protanopia">
+
+                            Protanopia
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-contrast="deuteranopia">
+
+                            Deuteranopia
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-contrast="tritanopia">
+
+                            Tritanopia
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-contrast="grayscale">
+
+                            Escala de cinza
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-contrast="accessible">
+
+                            Cores acessíveis
+
+                        </button>
+
+
+                        <div class="contrast-divider"></div>
+
+
+                        <button
+                            type="button"
+                            data-accessibility="focus">
+
+                            Foco visível
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            data-accessibility="motion">
+
+                            Reduzir animações
+
+                        </button>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
+
     </header>
 
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
     <main>
-        <!-- HERO COM BACKGROUND HERO.PNG -->
-        <section id="inicio" class="hero-section">
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section
+            id="inicio"
+            class="hero-section">
+
             <div class="hero-overlay"></div>
-            
+
             <div class="container hero-container">
+
                 <div class="hero-content">
+
                     <div class="wcag-status-pill">
-                        <span class="status-dot"></span> Conforme WCAG 2.1
+
+                        <span class="status-dot"></span>
+
+                        Conforme WCAG 2.1
+
                     </div>
-                    
+
+
                     <h1 class="hero-title">
-                        Tecnologia para todos: a importância da <span class="highlight-purple">inclusão</span> e da <span class="highlight-purple">acessibilidade</span>
+
+                        Tecnologia para todos:
+                        a importância da
+
+                        <span class="highlight-purple">
+                            inclusão
+                        </span>
+
+                        e da
+
+                        <span class="highlight-purple">
+                            acessibilidade
+                        </span>
+
                     </h1>
-                    
+
+
                     <p class="hero-description">
-                        Construir plataformas digitais sem barreiras garante autonomia, dignidade e equidade social para mais de 1 bilhão de pessoas no mundo.
+
+                        Construir plataformas digitais sem
+                        barreiras garante autonomia,
+                        dignidade e equidade social para
+                        mais de 1 bilhão de pessoas no mundo.
+
                     </p>
 
+
                     <div class="hero-actions">
-                        <a href="#conteudo" class="btn btn-primary">
+
+                        <a
+                            href="#conteudo"
+                            class="btn btn-primary">
+
                             Explorar Portal
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                aria-hidden="true">
+
+                                <path d="M6 9l6 6 6-6"></path>
+
+                            </svg>
+
                         </a>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- SEÇÃO DO CARROSSEL (FOTO E TEXTO ILUSTRATIVO) -->
-        <section id="conteudo" class="main-content-section">
+
+        <!-- =================================================
+             CONTEÚDO / CARROSSEL
+             ================================================= -->
+
+        <section
+            id="conteudo"
+            class="main-content-section">
+
             <div class="container">
-                
+
                 <div class="carousel-section-header">
-                    <div>
-                        <span class="section-tag tag-violet">DESTAQUES & REPORTAGENS ILUSTRADAS</span>
-                        <h2 class="column-title">Conteúdo Visual e Reflexões sobre Inclusão</h2>
-                        <p class="column-subtitle">Navegue pelos slides interativos para explorar as imagens ilustrativas e seus respectivos textos explicativos.</p>
-                    </div>
+
+                    <span class="section-tag tag-violet">
+                        DESTAQUES & REPORTAGENS ILUSTRADAS
+                    </span>
+
+                    <h2 class="column-title">
+                        Conteúdo Visual e Reflexões sobre Inclusão
+                    </h2>
+
+                    <p class="column-subtitle">
+
+                        Navegue pelos slides interativos para
+                        explorar as imagens ilustrativas e seus
+                        respectivos textos explicativos.
+
+                    </p>
+
                 </div>
 
-                <div id="galeria" class="full-carousel-wrapper">
-                    <!-- Botão Anterior -->
-                    <button id="carousel-prev" class="carousel-btn carousel-btn-prev" aria-label="Slide anterior">&#10094;</button>
-                    
-                    <div class="carousel-container">
-                        <div class="carousel-track" id="carousel-track">
-                            
-                            <!-- Slide 1 -->
-                            <div class="carousel-slide">
-                                <div class="carousel-img-wrapper">
-                                    <img src="assets/image_2369e1.jpg" alt="Ilustração sobre inovação e acessibilidade digital">
-                                </div>
-                                <div class="carousel-caption">
-                                    <span class="article-category">Inovação & Tecnologia</span>
-                                    <h3>A Inclusão como Motor de Transformação no Mercado de Trabalho</h3>
-                                    <p>A inclusão corporativa vai muito além do cumprimento de cotas. Ferramentas digitais com leitores de tela acurados, sintetizadores e ergonomia personalizada possibilitam que profissionais com deficiências liderem projetos estratégicos com total autonomia.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Slide 2 -->
-                            <div class="carousel-slide">
-                                <div class="carousel-img-wrapper">
-                                    <img src="assets/image_23667f.jpg" alt="Ilustração de ferramentas assistivas e educação">
-                                </div>
-                                <div class="carousel-caption">
-                                    <span class="article-category">Hardware & Software</span>
-                                    <h3>Tecnologias Assistivas: Da Linha Braille aos Rastreadores Oculares</h3>
-                                    <p>Dispositivos táteis instantâneos, softwares com comando por movimento dos olhos (eye-tracking) e teclados customizados permitem a alunos expressar ideias, redigir artigos e participar ativamente em salas de aula regulares.</p>
-                                </div>
-                            </div>
 
-                            <!-- Slide 3 -->
-                            <div class="carousel-slide">
+                <div
+                    id="galeria"
+                    class="full-carousel-wrapper">
+
+
+                    <button
+                        id="carousel-prev"
+                        class="carousel-btn carousel-btn-prev"
+                        aria-label="Slide anterior">
+
+                        &#10094;
+
+                    </button>
+
+
+                    <div class="carousel-container">
+
+                        <div
+                            class="carousel-track"
+                            id="carousel-track">
+
+
+                            <!-- SLIDE 1 -->
+
+                            <article class="carousel-slide">
+
                                 <div class="carousel-img-wrapper">
-                                    <img src="assets/image_236676.jpg" alt="Ilustração sobre ética e inteligência artificial inclusiva">
+
+                                    <img
+                                        src="assets/image_2369e1.jpg"
+                                        alt="Ilustração sobre inovação e acessibilidade digital">
+
                                 </div>
+
+
                                 <div class="carousel-caption">
-                                    <span class="article-category">Fronteira Tecnológica</span>
-                                    <h3>O Papel Ético da IA: Aliada Poderosa ou Nova Barreira Excludente?</h3>
-                                    <p>A Inteligência Artificial generativa oferece capacidades sem precedentes, como geração de legendas automáticas em tempo real. Sem bases de dados representativas, porém, modelos correm o risco de perpetuar vieses capacitistas.</p>
+
+                                    <span class="article-category">
+                                        Inovação & Tecnologia
+                                    </span>
+
+                                    <h3>
+                                        A Inclusão como Motor de
+                                        Transformação no Mercado
+                                        de Trabalho
+                                    </h3>
+
+                                    <p>
+
+                                        A inclusão corporativa vai
+                                        muito além do cumprimento
+                                        de cotas. Ferramentas
+                                        digitais com leitores de
+                                        tela acurados, sintetizadores
+                                        e ergonomia personalizada
+                                        possibilitam que profissionais
+                                        com deficiências liderem
+                                        projetos estratégicos com
+                                        total autonomia.
+
+                                    </p>
+
                                 </div>
-                            </div>
+
+                            </article>
+
+
+                            <!-- SLIDE 2 -->
+
+                            <article class="carousel-slide">
+
+                                <div class="carousel-img-wrapper">
+
+                                    <img
+                                        src="assets/image_23667f.jpg"
+                                        alt="Ilustração de ferramentas assistivas e educação">
+
+                                </div>
+
+
+                                <div class="carousel-caption">
+
+                                    <span class="article-category">
+                                        Hardware & Software
+                                    </span>
+
+                                    <h3>
+                                        Tecnologias Assistivas:
+                                        Da Linha Braille aos
+                                        Rastreadores Oculares
+                                    </h3>
+
+                                    <p>
+
+                                        Dispositivos táteis
+                                        instantâneos, softwares
+                                        com comando por movimento
+                                        dos olhos e teclados
+                                        customizados permitem a
+                                        alunos expressar ideias,
+                                        redigir artigos e participar
+                                        ativamente em salas de aula
+                                        regulares.
+
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+                            <!-- SLIDE 3 -->
+
+                            <article class="carousel-slide">
+
+                                <div class="carousel-img-wrapper">
+
+                                    <img
+                                        src="assets/image_236676.jpg"
+                                        alt="Ilustração sobre ética e inteligência artificial inclusiva">
+
+                                </div>
+
+
+                                <div class="carousel-caption">
+
+                                    <span class="article-category">
+                                        Fronteira Tecnológica
+                                    </span>
+
+                                    <h3>
+                                        O Papel Ético da IA:
+                                        Aliada Poderosa ou Nova
+                                        Barreira Excludente?
+                                    </h3>
+
+                                    <p>
+
+                                        A Inteligência Artificial
+                                        generativa oferece
+                                        capacidades como geração
+                                        de legendas automáticas
+                                        em tempo real. Sem bases
+                                        de dados representativas,
+                                        porém, modelos podem
+                                        perpetuar vieses.
+
+                                    </p>
+
+                                </div>
+
+                            </article>
 
                         </div>
+
                     </div>
-                    
-                    <!-- Botão Próximo -->
-                    <button id="carousel-next" class="carousel-btn carousel-btn-next" aria-label="Próximo slide">&#10095;</button>
+
+
+                    <button
+                        id="carousel-next"
+                        class="carousel-btn carousel-btn-next"
+                        aria-label="Próximo slide">
+
+                        &#10095;
+
+                    </button>
+
                 </div>
 
-                <!-- Paginação por Bolinhas -->
-                <div class="carousel-dots" id="carousel-dots">
-                    <button class="dot active" data-slide="0" aria-label="Ir para slide 1"></button>
-                    <button class="dot" data-slide="1" aria-label="Ir para slide 2"></button>
-                    <button class="dot" data-slide="2" aria-label="Ir para slide 3"></button>
+
+                <!-- PAGINAÇÃO -->
+
+                <div
+                    class="carousel-dots"
+                    id="carousel-dots">
+
+                    <button
+                        class="dot active"
+                        data-slide="0"
+                        aria-label="Ir para slide 1">
+                    </button>
+
+                    <button
+                        class="dot"
+                        data-slide="1"
+                        aria-label="Ir para slide 2">
+                    </button>
+
+                    <button
+                        class="dot"
+                        data-slide="2"
+                        aria-label="Ir para slide 3">
+                    </button>
+
                 </div>
 
             </div>
+
         </section>
 
-        <!-- NOVA SEÇÃO: IMAGEM NA ESQUERDA E TEXTO NA DIREITA (SEM CARD) -->
+
+        <!-- =================================================
+             SEÇÃO LADO A LADO
+             ================================================= -->
+
         <section class="side-content-section">
+
             <div class="container">
+
                 <div class="side-content-wrapper">
+
                     <div class="side-image-box">
-                        <img src="assets/image_228d5a.jpg" alt="Ilustração de inclusão e diversidade">
+
+                        <img
+                            src="assets/image_228d5a.jpg"
+                            alt="Ilustração de inclusão e diversidade">
+
                     </div>
+
+
                     <div class="side-text-box">
-                        <span class="section-tag">COMPROMISSO SOCIAL</span>
-                        <h2 class="column-title">Construindo Comunidades Acolhedoras e Acessíveis</h2>
-                        <p>A verdadeira acessibilidade digital é aquela que integra design universal, empatia e conformidade técnica rigorosa. Cada linha de código e cada elemento visual devem ser pensados para acolher a diversidade humana em todas as suas formas.</p>
-                        <p>Promover a inclusão é um esforço contínuo que transforma a tecnologia em uma ponte universal para o conhecimento, a educação e a cidadania plena.</p>
+
+                        <span class="section-tag">
+                            COMPROMISSO SOCIAL
+                        </span>
+
+                        <h2 class="column-title">
+
+                            Construindo Comunidades
+                            Acolhedoras e Acessíveis
+
+                        </h2>
+
+                        <p>
+
+                            A verdadeira acessibilidade digital
+                            é aquela que integra design universal,
+                            empatia e conformidade técnica
+                            rigorosa. Cada linha de código e
+                            cada elemento visual devem ser
+                            pensados para acolher a diversidade
+                            humana em todas as suas formas.
+
+                        </p>
+
+                        <p>
+
+                            Promover a inclusão é um esforço
+                            contínuo que transforma a tecnologia
+                            em uma ponte universal para o
+                            conhecimento, a educação e a
+                            cidadania plena.
+
+                        </p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <!-- SEÇÃO DE MÍDIAS (VÍDEO E PODCAST COM TRANSCRIÇÃO COMPLETA) -->
-        <section id="midias" class="media-section">
+
+        <!-- =================================================
+             MÍDIAS
+             ================================================= -->
+
+        <section
+            id="midias"
+            class="media-section">
+
             <div class="container">
-                
+
+
                 <div class="media-header">
+
                     <div>
-                        <span class="section-tag">CONTEÚDO AUDIOVISUAL ACESSÍVEL</span>
-                        <h2 class="section-title">Player de Vídeo: Tecnologia e Inclusão Digital</h2>
+
+                        <span class="section-tag">
+                            CONTEÚDO AUDIOVISUAL ACESSÍVEL
+                        </span>
+
+                        <h2 class="section-title">
+
+                            Player de Vídeo:
+                            Tecnologia e Inclusão Digital
+
+                        </h2>
+
                     </div>
-                    <span class="badge-status">● Legendas CC & Audiodescrição Ativas</span>
+
+
+                    <span class="badge-status">
+
+                        ● Legendas CC & Audiodescrição Ativas
+
+                    </span>
+
                 </div>
+
+
+                <!-- VÍDEO -->
 
                 <div class="video-card">
+
                     <div class="video-container">
-                        <video id="main-video" src="assets/video.mp4" preload="auto" playsinline></video>
+
+                        <video
+                            id="main-video"
+                            src="assets/video.mp4"
+                            preload="auto"
+                            playsinline>
+                        </video>
+
+
                         <div class="video-overlay-header">
-                            <span>Vídeo Educativo: A Tecnologia Faz Parte da Nossa Vida</span>
-                            <span id="video-duration-badge" class="duration">03:56</span>
+
+                            <span>
+                                Vídeo Educativo:
+                                A Tecnologia Faz Parte da Nossa Vida
+                            </span>
+
+                            <span
+                                id="video-duration-badge"
+                                class="duration">
+
+                                03:56
+
+                            </span>
+
                         </div>
-                        <button id="btn-play-large" class="play-btn-large" aria-label="Reproduzir vídeo">
+
+
+                        <button
+                            id="btn-play-large"
+                            class="play-btn-large"
+                            aria-label="Reproduzir vídeo">
+
                             <div class="play-icon"></div>
+
                         </button>
+
                     </div>
+
+
+                    <!-- CONTROLES -->
 
                     <div class="video-controls-bar">
-                        <button id="btn-play-video" class="control-btn">▶ Play</button>
-                        
+
+                        <button
+                            id="btn-play-video"
+                            class="control-btn">
+
+                            ▶ Play
+
+                        </button>
+
+
                         <div class="video-progress-container">
-                            <input type="range" id="video-seek" value="0" min="0" max="100" step="0.1" aria-label="Barra de progresso do vídeo">
+
+                            <input
+                                type="range"
+                                id="video-seek"
+                                value="0"
+                                min="0"
+                                max="100"
+                                step="0.1"
+                                aria-label="Barra de progresso do vídeo">
+
                         </div>
 
-                        <span id="video-time-display" class="time-display">00:00 / 03:56</span>
-                        
+
+                        <span
+                            id="video-time-display"
+                            class="time-display">
+
+                            00:00 / 03:56
+
+                        </span>
+
+
                         <div class="control-right">
-                            <button id="btn-toggle-cc" class="btn-toggle active" aria-label="Alternar Legendas">[CC] Legendas</button>
-                            <button id="btn-toggle-ad" class="btn-toggle active" aria-label="Alternar Audiodescrição">[AD] Audiodescrição</button>
-                            <button id="btn-video-speed" class="speed-btn" aria-label="Alterar velocidade">1.0x</button>
+
+                            <button
+                                id="btn-toggle-cc"
+                                class="btn-toggle active"
+                                aria-label="Alternar legendas">
+
+                                [CC] Legendas
+
+                            </button>
+
+
+                            <button
+                                id="btn-toggle-ad"
+                                class="btn-toggle active"
+                                aria-label="Alternar audiodescrição">
+
+                                [AD] Audiodescrição
+
+                            </button>
+
+
+                            <button
+                                id="btn-video-speed"
+                                class="speed-btn"
+                                aria-label="Alterar velocidade">
+
+                                1.0x
+
+                            </button>
+
                         </div>
+
                     </div>
 
-                    <p class="media-note">*Vídeo demonstrativo com suporte a navegação por teclado e síntese inclusiva.</p>
 
-                    <!-- CAIXA DE TRANSCRIÇÃO COMPLETA DO VÍDEO -->
-                    <details class="transcript-box" open>
+                    <p class="media-note">
+
+                        *Vídeo demonstrativo com suporte
+                        a navegação por teclado e síntese inclusiva.
+
+                    </p>
+
+
+                    <!-- TRANSCRIÇÃO -->
+
+                    <details
+                        class="transcript-box"
+                        open>
+
                         <summary>
-                            <span>📄 Transcrição Completa do Vídeo (Texto na Íntegra)</span>
-                            <span class="expand-label">▼ Recolher/Expandir</span>
+
+                            <span>
+                                Transcrição Completa
+                                do Vídeo
+                            </span>
+
+                            <span class="expand-label">
+                                ▼ Recolher/Expandir
+                            </span>
+
                         </summary>
+
+
                         <div class="transcript-content">
-                            <p><strong>[00:00]</strong> Transcrição acessível ao vídeo: IA como ferramenta de apoio na acessibilidade web[cite: 12].</p>
-                            <p><strong>[00:06]</strong> Nota de acessibilidade. Este texto representa a transcrição integral do episódio[cite: 12]. Ele foi estruturado para corresponder exatamente ao conteúdo falado[cite: 12].</p>
-                            <p><strong>[00:22]</strong> Olá a todas e todos! Sejam muito bem-vindos a mais um episódio do nosso portal sobre acessibilidade e inclusão digital[cite: 12].</p>
-                            <p><strong>[00:30]</strong> Hoje, vamos conversar sobre como a inteligência artificial pode atuar como uma verdadeira ferramenta de apoio no processo de criação e revisão de conteúdos[cite: 12].</p>
-                            <p><strong>[00:42]</strong> Olá! É um prazer estar aqui[cite: 12]. A IA apoia a pesquisa inicial, estruturação de roteiros, textos, imagens, narração e vídeo[cite: 12].</p>
-                            <p><strong>[00:58]</strong> Mas vale lembrar: a IA é uma assistente[cite: 12]. A equipe humana deve sempre conferir o resultado e corrigir falhas[cite: 12].</p>
-                            <p><strong>[01:08]</strong> Exatamente[cite: 12]. E para quem está criando um projeto digital, surge sempre a dúvida: qual IA devemos utilizar em cada etapa[cite: 12]?</p>
-                            <p><strong>[01:17]</strong> Tudo depende do objetivo[cite: 12]. Vamos repassar algumas etapas fundamentais[cite: 12].</p>
-                            <p><strong>[01:22]</strong> Em primeiro lugar, para código e acessibilidade, a IA ajuda a estruturar HTML e CSS, explicar códigos e sugerir testes práticos[cite: 12].</p>
-                            <p><strong>[01:37]</strong> Perfeito[cite: 12]. Para os textos da página, a IA ajuda a organizar ideias, criar títulos e simplificar a linguagem[cite: 12].</p>
-                            <p><strong>[01:51]</strong> Opções comuns são ChatGPT, Gemini, Claude ou Microsoft Copilot[cite: 12].</p>
-                            <p><strong>[01:59]</strong> Para apoio visual e imagens, podemos gerar ilustrações originais alinhadas ao tema[cite: 12].</p>
-                            <p><strong>[02:10]</strong> Ferramentas como ChatGPT Images, Adobe Firefly, Canva Magic Studio ou Gemini[cite: 12].</p>
-                            <p><strong>[02:19]</strong> Na produção de vídeo, a IA auxilia em roteiros, storyboards, animações e edição[cite: 12].</p>
-                            <p><strong>[02:41]</strong> E no formato de podcast e narração, a IA transforma pesquisas em conversas fluidas[cite: 12].</p>
-                            <p><strong>[03:06]</strong> É fundamental reforçar que não é necessário usar todas essas ferramentas de uma vez[cite: 12]. Escolha as soluções autorizadas pela sua instituição[cite: 12].</p>
-                            <p><strong>[03:24]</strong> E a regra de ouro: nunca envie dados pessoais ou vozes de terceiros sem autorização prévia[cite: 12].</p>
-                            <p><strong>[03:40]</strong> Começar pela estrutura semântica torna a página compreensível para leitores de tela[cite: 12]. A acessibilidade se constrói nos detalhes[cite: 12].</p>
+
+                            <p>
+                                <strong>[00:00]</strong>
+                                Transcrição acessível ao vídeo:
+                                IA como ferramenta de apoio na
+                                acessibilidade web.
+                            </p>
+
+                            <p>
+                                <strong>[00:22]</strong>
+                                Olá a todas e todos! Sejam
+                                muito bem-vindos a mais um
+                                episódio do nosso portal sobre
+                                acessibilidade e inclusão digital.
+                            </p>
+
+                            <p>
+                                <strong>[00:30]</strong>
+                                Hoje, vamos conversar sobre
+                                como a inteligência artificial
+                                pode atuar como uma ferramenta
+                                de apoio no processo de criação
+                                e revisão de conteúdos.
+                            </p>
+
+                            <p>
+                                <strong>[01:22]</strong>
+                                Em primeiro lugar, para código
+                                e acessibilidade, a IA ajuda a
+                                estruturar HTML e CSS, explicar
+                                códigos e sugerir testes práticos.
+                            </p>
+
+                            <p>
+                                <strong>[03:40]</strong>
+                                Começar pela estrutura semântica
+                                torna a página compreensível para
+                                leitores de tela. A acessibilidade
+                                se constrói nos detalhes.
+                            </p>
+
                         </div>
+
                     </details>
+
                 </div>
 
-                <!-- PLAYER DE PODCAST COM A TRANSCRIÇÃO EXATA DO ÁUDIO -->
+
+                <!-- =================================================
+                     PODCAST
+                     ================================================= -->
+
                 <div class="podcast-card">
+
                     <div class="podcast-title-row">
+
                         <div>
-                            <span class="section-tag">ÁUDIO & DEBATES</span>
-                            <h2 class="section-title">Player do Podcast: Vozes da Inclusão</h2>
+
+                            <span class="section-tag">
+                                ÁUDIO & DEBATES
+                            </span>
+
+                            <h2 class="section-title">
+                                Player do Podcast:
+                                Vozes da Inclusão
+                            </h2>
+
                         </div>
-                        <span class="episode-tag">Episódio #01 · 03:56 min</span>
+
+
+                        <span class="episode-tag">
+                            Episódio #01 · 03:56 min
+                        </span>
+
                     </div>
 
-                    <audio id="podcast-audio" src="assets/ElevenLabs_2026-09-22T18_32_22__s50_v3.mp3" preload="auto"></audio>
+
+                    <audio
+                        id="podcast-audio"
+                        src="assets/ElevenLabs_2026-09-22T18_32_22__s50_v3.mp3"
+                        preload="auto">
+                    </audio>
+
 
                     <div class="podcast-player-box">
-                        <button id="btn-play-podcast" class="play-btn-circle" aria-label="Tocar podcast">
+
+                        <button
+                            id="btn-play-podcast"
+                            class="play-btn-circle"
+                            aria-label="Tocar podcast">
+
                             <div class="play-icon-small"></div>
+
                         </button>
+
+
                         <div class="podcast-info">
-                            <h4>Transcrição Acessível ao Podcast: IA como Ferramenta de Apoio</h4>
-                            <p>Apresentação de Diretrizes e Práticas Inclusivas na Web</p>
+
+                            <h4>
+
+                                Transcrição Acessível ao Podcast:
+                                IA como Ferramenta de Apoio
+
+                            </h4>
+
+                            <p>
+
+                                Apresentação de Diretrizes
+                                e Práticas Inclusivas na Web
+
+                            </p>
+
+
                             <div class="podcast-progress">
-                                <span id="podcast-current-time" class="time">00:00</span>
-                                <input type="range" id="podcast-seek" class="progress-bar-range" value="0" min="0" max="100" step="0.1" aria-label="Barra de progresso do podcast">
-                                <span id="podcast-total-time" class="time">03:56</span>
+
+                                <span
+                                    id="podcast-current-time"
+                                    class="time">
+
+                                    00:00
+
+                                </span>
+
+
+                                <input
+                                    type="range"
+                                    id="podcast-seek"
+                                    class="progress-bar-range"
+                                    value="0"
+                                    min="0"
+                                    max="100"
+                                    step="0.1"
+                                    aria-label="Barra de progresso do podcast">
+
+
+                                <span
+                                    id="podcast-total-time"
+                                    class="time">
+
+                                    03:56
+
+                                </span>
+
                             </div>
+
                         </div>
+
+
                         <div class="podcast-audio-settings">
-                            <button id="btn-podcast-speed" class="speed-badge-btn">1.0x</button>
-                            <span class="volume-badge">Vol: 100%</span>
+
+                            <button
+                                id="btn-podcast-speed"
+                                class="speed-badge-btn">
+
+                                1.0x
+
+                            </button>
+
+                            <span
+                                id="podcast-volume"
+                                class="volume-badge">
+
+                                Vol: 100%
+
+                            </span>
+
                         </div>
+
                     </div>
 
-                    <!-- CAIXA DE TRANSCRIÇÃO COMPLETA DO ÁUDIO FORNECIDO -->
-                    <details class="transcript-box" open>
+
+                    <!-- TRANSCRIÇÃO DO PODCAST -->
+
+                    <details
+                        class="transcript-box"
+                        open>
+
                         <summary>
-                            <span>📝 Transcrição Completa do Áudio (Texto na Íntegra)</span>
-                            <span class="expand-label">▼ Recolher/Expandir</span>
+
+                            <span>
+                                Transcrição Completa
+                                do Áudio
+                            </span>
+
+                            <span class="expand-label">
+                                ▼ Recolher/Expandir
+                            </span>
+
                         </summary>
+
+
                         <div class="transcript-content">
-    <p><strong>[00:00]</strong> Transcrição acessível ao podcast: IA como ferramenta de apoio na acessibilidade web.</p>
-    <p><strong>[00:06]</strong> Nota de acessibilidade. Este texto representa a transcrição integral do episódio do podcast. Ele foi estruturado para corresponder exatamente ao conteúdo áudio.</p>
-    <p><strong>[00:22]</strong> Olá a todas e todos! Sejam muito bem-vindos a mais um episódio do nosso podcast sobre acessibilidade e inclusão digital.</p>
-    <p><strong>[00:30]</strong> Hoje, vamos conversar sobre como a inteligência artificial pode atuar como uma verdadeira ferramenta de apoio no processo de criação, registro e revisão de conteúdos acessíveis.</p>
-    <p><strong>[00:42]</strong> Olá! É um prazer estar aqui. Esse é um tema essencial, pois a inteligência artificial pode apoiar a pesquisa inicial, a estruturação de roteiros, a produção de textos, a geração de imagens, a narração, o vídeo e até o próprio podcast.</p>
-    <p><strong>[00:58]</strong> Mas vale lembrar: a IA é uma assistente. A equipe humana deve sempre conferir o resultado, corrigir falhas e garantir a eliminação de estereótipos.</p>
-    <p><strong>[01:08]</strong> Exatamente. E para quem está criando um projeto digital, surge sempre a dúvida: qual IA devemos utilizar em cada etapa do trabalho?</p>
-    <p><strong>[01:17]</strong> Tudo depende do objetivo. Vamos repassar algumas etapas fundamentais.</p>
-    <p><strong>[01:22]</strong> Em primeiro lugar, para código e acessibilidade, a IA pode ajudar a estruturar HTML e CSS, explicar trechos de código complexos, revisar a responsividade e sugerir testes práticos de acessibilidade.</p>
-    <p><strong>[01:37]</strong> Perfeito. E no caso dos textos da página? Para os textos, a IA ajuda a organizar ideias, criar títulos atraentes, simplificar a linguagem e revisar a clareza, sempre garantindo o respeito ao leitor.</p>
-    <p><strong>[01:51]</strong> Algumas opções bastante utilizadas para essa finalidade são o ChatGPT, o Gemini, o Claude ou o Microsoft Copilot.</p>
-    <p><strong>[01:59]</strong> E quando o assunto é apoio visual, como a geração de imagens? Nesse caso, podemos gerar ilustrações originais e testar composições visuais alinhadas ao tema escolhido.</p>
-    <p><strong>[02:10]</strong> Para isso, temos opções como o ChatGPT Images, Adobe Firefly, Canva Magic Studio ou o próprio Gemini.</p>
-    <p><strong>[02:19]</strong> Excelente. E para quem está produzindo conteúdo em vídeo? Na produção audiovisual, a IA auxilia na criação de roteiros, na elaboração de storyboards, encenas curtas, animações e no suporte à edição final.</p>
-    <p><strong>[02:33]</strong> Ferramentas como Adobe Firefly, Canva Magic Media ou os recursos de vídeo do Gemini são ótimas aliadas.</p>
-    <p><strong>[02:41]</strong> E para finalizar a lista de recursos, temos o nosso formato de hoje: podcast e narração.</p>
-    <p><strong>[02:47]</strong> Sim! A IA é incrível para transformar fontes de pesquisa em formato de conversa, preparar roteiros dinâmicos e até gerar uma narração em áudio fluida a partir de um texto revisado.</p>
-    <p><strong>[02:59]</strong> Opções como o NotebookLM, o ElevenLabs ou o Canva cumprem muito bem esse papel.</p>
-    <p><strong>[03:06]</strong> É fundamental reforçar que não é necessário usar todas essas ferramentas de uma vez. A equipe deve escolher as soluções disponíveis e devidamente autorizadas pela sua instituição.</p>
-    <p><strong>[03:17]</strong> Lembrem-se de que os planos, limites de uso, idade mínima e recursos disponíveis podem variar.</p>
-    <p><strong>[03:24]</strong> E a regra de ouro: nunca envie dados pessoais, fotos ou vozes de terceiros sem a devida autorização prévia.</p>
-    <p><strong>[03:32]</strong> Para encerrar, como pequenas decisões de desenvolvimento removem barreiras na prática.</p>
-    <p><strong>[03:40]</strong> Começar pela estrutura semântica torna a página muito mais compreensível para várias tecnologias assistivas, como os leitores de tela. A acessibilidade se constrói nos detalhes.</p>
-    <p><strong>[03:51]</strong> Com certeza. Muito obrigada pela conversa e até o nosso próximo episódio!</p>
-</div>
+
+                            <p>
+                                <strong>[00:00]</strong>
+                                Transcrição acessível ao podcast:
+                                IA como ferramenta de apoio na
+                                acessibilidade web.
+                            </p>
+
+                            <p>
+                                <strong>[00:22]</strong>
+                                Olá a todas e todos! Sejam
+                                muito bem-vindos a mais um
+                                episódio do nosso podcast sobre
+                                acessibilidade e inclusão digital.
+                            </p>
+
+                            <p>
+                                <strong>[00:42]</strong>
+                                A inteligência artificial pode
+                                apoiar a pesquisa inicial,
+                                a estruturação de roteiros,
+                                a produção de textos, a geração
+                                de imagens, a narração, o vídeo
+                                e até o próprio podcast.
+                            </p>
+
+                            <p>
+                                <strong>[03:06]</strong>
+                                É fundamental reforçar que não
+                                é necessário usar todas essas
+                                ferramentas de uma vez.
+                            </p>
+
+                            <p>
+                                <strong>[03:40]</strong>
+                                Começar pela estrutura semântica
+                                torna a página muito mais
+                                compreensível para várias
+                                tecnologias assistivas.
+                            </p>
+
+                        </div>
+
                     </details>
+
                 </div>
 
             </div>
+
         </section>
+
     </main>
 
-    <!-- RODAPÉ ATUALIZADO (SEM FUNDO NO DESENVOLVIDO POR, LINKS PARA GITHUB E SEM LOGOS DE REDES SOCIAIS) -->
-    <footer id="sobre" class="main-footer">
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer
+        id="sobre"
+        class="main-footer">
+
         <div class="container footer-grid">
+
+
             <div class="footer-col brand-col">
+
                 <div class="footer-brand-flex">
-                    <div class="logo-icon-footer">A+</div>
-                    <h3 class="footer-brand">AcessiTech</h3>
-                </div>
-                <p>Plataforma aberta dedicada a disseminar diretrizes de inclusão, acessibilidade web (WCAG) e tecnologias assistivas.</p>
-                
-                <!-- SEÇÃO "DESENVOLVIDO POR" SEM CAIXA/FUNDO E COM LINKS PARA GITHUB -->
-                <div class="authors-plain-box">
-                    <span class="authors-title-small">Desenvolvido por:</span>
-                    <div class="authors-names">
-                        <a href="https://github.com/MatheusMomm" target="_blank" rel="noopener noreferrer">Matheus Momm de Souza</a> & 
-                        <a href="https://github.com/lucaslinhar-afk" target="_blank" rel="noopener noreferrer">Lucas Antonio Linhar</a>
+
+                    <div class="logo-icon-footer">
+                        A+
                     </div>
+
+                    <h3 class="footer-brand">
+                        AcessiTech
+                    </h3>
+
                 </div>
+
+
+                <p>
+
+                    Plataforma aberta dedicada a disseminar
+                    diretrizes de inclusão, acessibilidade
+                    web (WCAG) e tecnologias assistivas.
+
+                </p>
+
+
+                <div class="authors-plain-box">
+
+                    <span class="authors-title-small">
+                        Desenvolvido por:
+                    </span>
+
+                    <div class="authors-names">
+
+                        <a
+                            href="https://github.com/MatheusMomm"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Matheus Momm de Souza
+
+                        </a>
+
+                        &
+
+                        <a
+                            href="https://github.com/lucaslinhar-afk"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Lucas Antonio Linhar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
 
+
             <div class="footer-col">
-                <h4>Navegação</h4>
+
+                <h4>
+                    Navegação
+                </h4>
+
                 <ul class="footer-links-list">
-                    <li><a href="#inicio">Início do Portal</a></li>
-                    <li><a href="#conteudo">Destaques</a></li>
-                    <li><a href="#midias">Vídeo & Podcast</a></li>
+
+                    <li>
+                        <a href="#inicio">
+                            Início do Portal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#conteudo">
+                            Destaques
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#midias">
+                            Vídeo & Podcast
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
 
+
             <div class="footer-col">
-                <h4>Padrões & Normas</h4>
+
+                <h4>
+                    Padrões & Normas
+                </h4>
+
                 <ul class="footer-links-list">
-                    <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Diretrizes WCAG 2.1</a></li>
-                    <li><a href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital" target="_blank">Modelo e-MAG</a></li>
+
+                    <li>
+                        <a
+                            href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Diretrizes WCAG 2.1
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Modelo e-MAG
+
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
 
+
             <div class="footer-col">
-                <h4>Sobre o Portal</h4>
-                <p class="support-text">Desenvolvido com foco total em acessibilidade web, navegação por teclado e compatibilidade com leitores de tela.</p>
+
+                <h4>
+                    Sobre o Portal
+                </h4>
+
+                <p class="support-text">
+
+                    Desenvolvido com foco total em
+                    acessibilidade web, navegação por
+                    teclado e compatibilidade com
+                    leitores de tela.
+
+                </p>
+
             </div>
+
         </div>
+
 
         <div class="footer-bottom">
+
             <div class="container footer-bottom-flex">
-                <p>© 2026 AcessiTech • Todos os direitos reservados.</p>
-                <p class="footer-quote">"Construir uma web sem barreiras é responsabilidade de todos."</p>
+
+                <p>
+                    © 2026 AcessiTech • Todos os direitos reservados.
+                </p>
+
+                <p class="footer-quote">
+
+                    "Construir uma web sem barreiras
+                    é responsabilidade de todos."
+
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
